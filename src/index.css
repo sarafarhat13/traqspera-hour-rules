@@ -109,28 +109,34 @@ body {
   overflow: hidden;
 }
 
-/* Side nav is absolutely positioned inside its host; keep the host out of flex flow. */
+/* Side nav overlays the left edge; content offset is controlled in CSS below. */
 .app-side-nav {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 0;
   flex: none;
   height: 100% !important;
-  z-index: 10;
-  overflow: visible;
+  z-index: 100;
 }
 
 .app-content {
+  --nav-rail-width: 4rem;
+  --nav-offset: var(--nav-rail-width);
   flex: 1;
   min-width: 0;
-  width: 100%;
-  max-width: 100%;
+  width: calc(100% - var(--nav-offset));
+  max-width: calc(100% - var(--nav-offset));
   height: 100%;
+  margin-left: var(--nav-offset);
   overflow: auto;
   padding: 1.5rem;
   box-sizing: border-box;
+  transition: margin-left 0.2s ease-out, width 0.2s ease-out, max-width 0.2s ease-out;
+}
+
+.app-content.nav-expanded {
+  --nav-offset: 260px;
 }
 
 .brand {

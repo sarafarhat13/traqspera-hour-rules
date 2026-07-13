@@ -74,9 +74,8 @@ export default function Layout() {
         <ModusWcSideNavigation
           className="app-side-nav"
           expanded={expanded}
-          mode="push"
+          mode="overlay"
           maxWidth="260px"
-          targetContent=".app-content"
           onExpandedChange={(e) => setExpanded(e.detail)}>
           <ModusWcMenu size="lg">
             {ROUTES.map((r) => (
@@ -94,7 +93,7 @@ export default function Layout() {
           </div>
         </ModusWcSideNavigation>
 
-        <main className="app-content">
+        <main className={`app-content${expanded ? ' nav-expanded' : ''}`}>
           <Outlet />
         </main>
       </div>
