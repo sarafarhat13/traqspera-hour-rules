@@ -1,0 +1,27 @@
+{
+  "name": "traqspera-hour-rules",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Time-tracking compliance application built with the Trimble Modus Component Platform (net-to-the-minute logic).",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@trimble-oss/moduswebcomponents": "1.10.0",
+    "@trimble-oss/moduswebcomponents-react": "1.10.0-react18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}

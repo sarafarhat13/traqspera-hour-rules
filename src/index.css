@@ -1,0 +1,460 @@
+/* Modus Icons font (not bundled with modus-wc-styles.css). Served from CDN. */
+@font-face {
+  font-family: 'modus-icons';
+  src: url('https://cdn.jsdelivr.net/npm/@trimble-oss/modus-icons@1/dist/modus-outlined/fonts/modus-icons.woff2')
+    format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'modus-icons-outlined';
+  src: url('https://cdn.jsdelivr.net/npm/@trimble-oss/modus-icons@1/dist/modus-outlined/fonts/modus-icons.woff2')
+    format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'modus-icons-solid';
+  src: url('https://cdn.jsdelivr.net/npm/@trimble-oss/modus-icons@1/dist/modus-solid/fonts/modus-icons.woff2')
+    format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+.modus-icons {
+  font-family: 'modus-icons';
+  font-style: normal;
+  font-weight: normal;
+}
+.modus-icons-outlined {
+  font-family: 'modus-icons-outlined';
+  font-style: normal;
+  font-weight: normal;
+}
+.modus-icons-solid {
+  font-family: 'modus-icons-solid';
+  font-style: normal;
+  font-weight: normal;
+}
+
+:root {
+  /* Design tokens (Modus Blueprint design system) */
+  --c-primary-50: #f0f9ff;
+  --c-primary-100: #e0f2fe;
+  --c-primary-500: #0ea5e9;
+  --c-primary-600: #0284c7;
+  --c-primary-700: #0369a1;
+  --c-success-50: #f0fdf4;
+  --c-success-500: #22c55e;
+  --c-success-600: #16a34a;
+  --c-warning-50: #fffbeb;
+  --c-warning-400: #fbbf24;
+  --c-warning-500: #f59e0b;
+  --c-warning-600: #d97706;
+  --c-error-50: #fef2f2;
+  --c-error-500: #ef4444;
+  --c-error-600: #dc2626;
+  --c-neutral-50: #fafafa;
+  --c-neutral-100: #f5f5f5;
+  --c-neutral-200: #e5e5e5;
+  --c-neutral-300: #d4d4d4;
+  --c-neutral-400: #a3a3a3;
+  --c-neutral-500: #737373;
+  --c-neutral-600: #525252;
+  --c-neutral-700: #404040;
+  --c-neutral-900: #171717;
+
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--c-neutral-100);
+  color: var(--c-neutral-900);
+}
+
+/* ---------- App shell ---------- */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.app-side-nav {
+  position: relative;
+  align-self: stretch;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  padding: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.brand-name {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.brand-sub {
+  font-size: 0.8rem;
+  color: var(--c-neutral-500);
+}
+
+.nav-drawer {
+  padding: 1rem;
+  max-width: 320px;
+}
+
+.side-nav-footer {
+  padding: 1rem;
+  border-top: 1px solid var(--c-neutral-200);
+  margin-top: auto;
+}
+
+/* ---------- Page primitives ---------- */
+.page-header {
+  margin-bottom: 1.25rem;
+}
+.page-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.page-header p {
+  margin: 0;
+  color: var(--c-neutral-600);
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--c-neutral-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+}
+.panel + .panel {
+  margin-top: 1.25rem;
+}
+.panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.stat {
+  flex: 1;
+  min-width: 140px;
+  background: var(--c-neutral-50);
+  border: 1px solid var(--c-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 0.9rem 1rem;
+}
+.stat .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--c-neutral-500);
+}
+.stat .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.modal-footer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* ---------- Field Employee (mobile-first) ---------- */
+.field-page {
+  max-width: 520px;
+  margin: 0 auto;
+}
+.field-page modus-wc-card {
+  display: block;
+  margin-top: 1rem;
+}
+.clock-card {
+  text-align: center;
+}
+.clock-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+.clock-status.in {
+  background: var(--c-success-50);
+  color: var(--c-success-600);
+}
+.clock-status.out {
+  background: var(--c-neutral-100);
+  color: var(--c-neutral-600);
+}
+.big-clock {
+  font-size: 3rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  margin: 0.25rem 0 1rem;
+}
+.clock-button-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.clock-button-wrap modus-wc-button {
+  width: 100%;
+  max-width: 320px;
+}
+.craft-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.craft-row > * {
+  flex: 1;
+}
+.reason-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.freeze-note {
+  background: var(--c-warning-50);
+  border: 1px solid var(--c-warning-400);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  color: var(--c-warning-600);
+  font-size: 0.9rem;
+}
+.attestation-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--c-neutral-200);
+}
+.attestation-item:last-of-type {
+  border-bottom: none;
+}
+.injury-comments {
+  margin-top: 0.75rem;
+}
+
+/* ---------- Foreman dashboard ---------- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.toolbar .toggles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.compliance-pill {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.compliance-pill.ok {
+  background: var(--c-success-50);
+  color: var(--c-success-600);
+}
+.compliance-pill.warning {
+  background: var(--c-warning-50);
+  color: var(--c-warning-600);
+}
+.compliance-pill.violation {
+  background: var(--c-error-50);
+  color: var(--c-error-600);
+}
+.compliance-pill.satisfied {
+  background: var(--c-primary-50);
+  color: var(--c-primary-700);
+}
+
+/* Heat map */
+.heatmap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.heat-cell {
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  min-height: 110px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.heat-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.heat-cell:focus-visible {
+  outline: 3px solid var(--c-primary-700);
+  outline-offset: 2px;
+}
+.heat-cell.active {
+  background: var(--c-success-500);
+}
+.heat-cell.lunch {
+  background: var(--c-warning-500);
+}
+.heat-cell.shift_end {
+  background: var(--c-neutral-400);
+}
+.heat-cell.hot {
+  background: var(--c-error-500);
+}
+.heat-cell .zone {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.heat-cell .count {
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+.heatmap-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ---------- Admin exception lanes ---------- */
+.exception-lanes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.lane h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.lane-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.1rem 0.55rem;
+  border-radius: 9999px;
+  background: var(--c-neutral-100);
+  color: var(--c-neutral-600);
+}
+.bulk-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--c-primary-50);
+  border: 1px solid var(--c-primary-100);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1rem;
+}
+.bulk-bar .selected-count {
+  font-weight: 600;
+  color: var(--c-primary-700);
+}
+.sig-preserved {
+  color: var(--c-success-600);
+  font-weight: 600;
+}
+.sig-cleared {
+  color: var(--c-error-600);
+  font-weight: 600;
+}
+.flag-chip {
+  display: inline-block;
+  margin: 0 0.25rem 0.25rem 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .exception-lanes {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .app-content {
+    padding: 1rem;
+  }
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+  .heatmap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
