@@ -100,22 +100,37 @@ body {
 }
 
 .app-body {
+  position: relative;
   display: flex;
   flex: 1;
   min-height: 0;
+  min-width: 0;
+  width: 100%;
   overflow: hidden;
 }
 
+/* Side nav is absolutely positioned inside its host; keep the host out of flex flow. */
 .app-side-nav {
-  position: relative;
-  align-self: stretch;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  flex: none;
+  height: 100% !important;
+  z-index: 10;
+  overflow: visible;
 }
 
 .app-content {
   flex: 1;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
   overflow: auto;
   padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .brand {
@@ -289,6 +304,32 @@ body {
 }
 
 /* ---------- Foreman dashboard ---------- */
+.foreman-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.foreman-page .panel {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.foreman-table-host {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.foreman-table-host modus-wc-table {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;

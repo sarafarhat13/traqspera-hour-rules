@@ -95,7 +95,7 @@ export default function ForemanDashboard() {
 
   const columns = useMemo(
     () => [
-      { id: 'name', header: 'Crew Member', accessor: 'name', sortable: true, width: '200px' },
+      { id: 'name', header: 'Crew Member', accessor: 'name', sortable: true },
       { id: 'craft', header: 'Craft', accessor: 'craft', sortable: true },
       {
         id: 'status',
@@ -120,7 +120,7 @@ export default function ForemanDashboard() {
           return pill(String(value), c.bg, c.fg);
         },
       },
-      { id: 'zone', header: 'Zone', accessor: 'zone', sortable: true, width: '90px' },
+      { id: 'zone', header: 'Zone', accessor: 'zone', sortable: true },
     ],
     []
   );
@@ -131,7 +131,7 @@ export default function ForemanDashboard() {
   };
 
   return (
-    <div>
+    <div className="foreman-page">
       <div className="page-header">
         <h1>Foreman Dashboard</h1>
         <p>Live crew status and net-to-the-minute meal-break compliance countdowns.</p>
@@ -198,7 +198,16 @@ export default function ForemanDashboard() {
         </div>
 
         {view === 'list' ? (
-          <ModusWcTable columns={columns} data={visibleRows} sortable hover density="comfortable" />
+          <div className="foreman-table-host">
+            <ModusWcTable
+              columns={columns}
+              data={visibleRows}
+              sortable
+              hover
+              density="comfortable"
+              customClass="foreman-table"
+            />
+          </div>
         ) : (
           <HeatMap zones={zones} onZoneClick={drillDown} />
         )}
