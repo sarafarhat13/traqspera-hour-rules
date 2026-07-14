@@ -18,6 +18,7 @@ interface NavRoute {
 const ROUTES: NavRoute[] = [
   { path: '/field', label: 'Field Employee', icon: 'person' },
   { path: '/foreman', label: 'Foreman Dashboard', icon: 'bar_graph' },
+  { path: '/timesheet', label: 'Timesheet Summary', icon: 'calendar' },
   { path: '/admin', label: 'Admin Exceptions', icon: 'settings' },
 ];
 

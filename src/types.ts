@@ -75,3 +75,58 @@ export interface AttestationState {
   injuryOccurred: boolean;
   injuryComments: string;
 }
+
+/** Segment classification for manager timesheet views. */
+export type SegmentType = 'work' | 'rest' | 'meal' | 'working_lunch';
+
+export type SegmentStatus = 'approved' | 'pending' | 'flagged';
+
+/** A single work or break block derived from clock punches (net-to-the-minute). */
+export interface TimeSegment {
+  id: string;
+  type: SegmentType;
+  startMs: number;
+  endMs: number;
+  netMinutes: number;
+  reasonCode?: ReasonCode;
+  craft?: Craft;
+  jobCode?: string;
+  phaseCode?: string;
+  unionCode?: string;
+  status: SegmentStatus;
+  flags: string[];
+}
+
+export type DayComplianceLevel = 'ok' | 'warning' | 'violation';
+
+/** Per-day rollup for one employee on the timesheet summary. */
+export interface DaySummary {
+  dateKey: string;
+  label: string;
+  attestationComplete: boolean;
+  restMinutes: number;
+  mealMinutes: number;
+  netWorkMinutes: number;
+  segments: TimeSegment[];
+  complianceLevel: DayComplianceLevel;
+}
+
+/** Employee record for the timesheet summary page. */
+export interface TimesheetEmployee {
+  id: string;
+  employeeNumber: string;
+  name: string;
+  craft: Craft;
+  days: DaySummary[];
+}
+
+/** Team-level KPI rollup (Workyard-style summary tiles). */
+export interface TeamRollup {
+  teamMembers: number;
+  regularMinutes: number;
+  overtimeMinutes: number;
+  breakMinutes: number;
+  mealMinutes: number;
+  totalMinutes: number;
+  flaggedCount: number;
+}
