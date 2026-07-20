@@ -677,6 +677,157 @@ body {
   min-width: 0;
 }
 
+/* ---------- Labor rules admin ---------- */
+.labor-rules-page {
+  width: 100%;
+  max-width: 960px;
+  min-width: 0;
+}
+
+.labor-rules-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--c-primary-600);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.labor-rules-back:hover {
+  color: var(--c-primary-700);
+}
+
+.labor-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.labor-rule-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.labor-rule-link modus-wc-card {
+  display: block;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.labor-rule-link:hover modus-wc-card {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.labor-rule-card h2 {
+  margin: 0.5rem 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.labor-rule-card p {
+  margin: 0;
+  color: var(--c-neutral-600);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.labor-rule-cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--c-primary-600);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.policy-summary {
+  margin-bottom: 1rem;
+  background: var(--c-primary-50);
+  border-color: var(--c-primary-100);
+}
+
+.policy-summary h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.policy-summary p {
+  margin: 0;
+  color: var(--c-neutral-700);
+  font-size: 0.9rem;
+}
+
+.policy-section {
+  margin-bottom: 1rem;
+}
+
+.policy-section-desc {
+  margin: -0.35rem 0 1rem;
+  color: var(--c-neutral-600);
+  font-size: 0.9rem;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.policy-grid.nested {
+  margin: 0.5rem 0 0.75rem 1.5rem;
+}
+
+.policy-toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-top: 0.75rem;
+}
+
+.exception-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.timing-band {
+  margin-bottom: 1rem;
+  background: var(--c-neutral-50);
+}
+
+.timing-band h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.timeline-preview {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--c-neutral-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-neutral-200);
+}
+
+.timeline-preview-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--c-neutral-500);
+  margin-bottom: 0.5rem;
+}
+
+.policy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-neutral-200);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
   .app-content {

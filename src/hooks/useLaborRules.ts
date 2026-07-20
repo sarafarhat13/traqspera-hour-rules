@@ -1,0 +1,45 @@
+import { useCallback, useEffect, useState } from 'react';
+import { DEFAULT_LABOR_RULES, LABOR_RULES_STORAGE_KEY } from '../data/defaultLaborRules';
+import type { LaborRulesState, MealPeriodPolicy, RestBreakPolicy } from '../types/laborRules';
+
+function loadRules(): LaborRulesState {
+  try {
+    const raw = localStorage.getItem(LABOR_RULES_STORAGE_KEY);
+    if (!raw) return DEFAULT_LABOR_RULES;
+    return { ...DEFAULT_LABOR_RULES, ...JSON.parse(raw) } as LaborRulesState;
+  } catch {
+    return DEFAULT_LABOR_RULES;
+  }
+}
+
+export function useLaborRules() {
+  const [rules, setRules] = useState<LaborRulesState>(loadRules);
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem(LABOR_RULES_STORAGE_KEY, JSON.stringify(rules));
+  }, [rules]);
+
+  const updateRest = useCallback((patch: Partial<RestBreakPolicy>) => {
+    setRules((prev) => ({ ...prev, restBreak: { ...prev.restBreak, ...patch } }));
+    setSaved(false);
+  }, []);
+
+  const updateMeal = useCallback((patch: Partial<MealPeriodPolicy>) => {
+    setRules((prev) => ({ ...prev, mealPeriod: { ...prev.mealPeriod, ...patch } }));
+    setSaved(false);
+  }, []);
+
+  const save = useCallback(() => {
+    localStorage.setItem(LABOR_RULES_STORAGE_KEY, JSON.stringify(rules));
+    setSaved(true);
+    window.setTimeout(() => setSaved(false), 3000);
+  }, [rules]);
+
+  const reset = useCallback(() => {
+    setRules(DEFAULT_LABOR_RULES);
+    setSaved(false);
+  }, []);
+
+  return { rules, updateRest, updateMeal, save, saved, reset };
+}

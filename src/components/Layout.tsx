@@ -19,6 +19,7 @@ const ROUTES: NavRoute[] = [
   { path: '/field', label: 'Field Employee', icon: 'person' },
   { path: '/foreman', label: 'Foreman Dashboard', icon: 'bar_graph' },
   { path: '/timesheet', label: 'Timesheet Summary', icon: 'calendar' },
+  { path: '/labor-rules', label: 'Labor Rules', icon: 'book' },
   { path: '/admin', label: 'Admin Exceptions', icon: 'settings' },
 ];
 
@@ -83,7 +84,11 @@ export default function Layout() {
               <ModusWcMenuItem
                 key={r.path}
                 label={r.label}
-                selected={location.pathname === r.path}
+                selected={
+                  r.path === '/labor-rules'
+                    ? location.pathname.startsWith('/labor-rules')
+                    : location.pathname === r.path
+                }
                 onClick={() => go(r.path)}>
                 <ModusWcIcon slot="start-icon" name={r.icon} decorative />
               </ModusWcMenuItem>
