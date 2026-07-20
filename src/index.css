@@ -677,95 +677,233 @@ body {
   min-width: 0;
 }
 
-/* ---------- Labor rules admin ---------- */
-.labor-rules-page {
+/* ---------- Traqspera Timesheet Hour Rules ---------- */
+.hour-rules-page {
   width: 100%;
-  max-width: 960px;
+  max-width: 100%;
   min-width: 0;
 }
 
-.labor-rules-back {
+.hour-rules-page h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--c-neutral-900);
+}
+
+.hour-rules-page-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hour-rules-save-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hour-rules-section {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--c-neutral-200);
+  background: #fff;
+}
+
+.hour-rules-section-header {
+  background: #0e416c;
+  color: #fff;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hour-rules-section-body {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.hour-rules-subsection {
+  margin-bottom: 1.5rem;
+}
+
+.hour-rules-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.hour-rules-subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-neutral-800);
+}
+
+.hour-rules-mini-title {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.break-rules-desc {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--c-neutral-600);
+  line-height: 1.5;
+  max-width: 900px;
+}
+
+.break-rules-block {
+  margin-bottom: 0.5rem;
+}
+
+.break-rules-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr minmax(280px, 1.2fr);
+  gap: 1rem;
+  align-items: end;
+}
+
+.break-rules-action .field-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--c-neutral-700);
+  margin-bottom: 0.35rem;
+}
+
+.rule-action-toggle {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rule-action-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: var(--c-primary-600);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 0.75rem;
-}
-
-.labor-rules-back:hover {
-  color: var(--c-primary-700);
-}
-
-.labor-rules-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-.labor-rule-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.labor-rule-link modus-wc-card {
-  display: block;
-  height: 100%;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.labor-rule-link:hover modus-wc-card {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.labor-rule-card h2 {
-  margin: 0.5rem 0 0.35rem;
-  font-size: 1.1rem;
-}
-
-.labor-rule-card p {
-  margin: 0;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid var(--c-neutral-300);
+  background: #fff;
   color: var(--c-neutral-600);
-  font-size: 0.9rem;
-  line-height: 1.45;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.labor-rule-cta {
-  display: inline-block;
-  margin-top: 0.75rem;
-  color: var(--c-primary-600);
+.rule-action-btn.flag.active {
+  background: #22c55e;
+  border-color: #16a34a;
+  color: #fff;
+}
+
+.rule-action-btn.apply.active {
+  background: var(--c-neutral-500);
+  border-color: var(--c-neutral-600);
+  color: #fff;
+}
+
+.daily-rules-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+.daily-rules-header,
+.daily-rules-row {
+  display: grid;
+  grid-template-columns: 140px repeat(5, minmax(100px, 1fr));
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.daily-rules-header {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-neutral-700);
+  padding-bottom: 0.25rem;
+}
+
+.day-col {
   font-weight: 600;
   font-size: 0.85rem;
 }
 
-.policy-summary {
-  margin-bottom: 1rem;
-  background: var(--c-primary-50);
-  border-color: var(--c-primary-100);
+.weekly-rules-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
 }
 
-.policy-summary h2 {
-  margin: 0 0 0.35rem;
-  font-size: 1.1rem;
+.precedence-block {
+  margin-bottom: 1.25rem;
 }
 
-.policy-summary p {
-  margin: 0;
+.precedence-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
   color: var(--c-neutral-700);
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+.precedence-list {
+  margin: 0;
+  padding-left: 1.5rem;
   font-size: 0.9rem;
 }
 
-.policy-section {
+.precedence-list.disabled {
+  opacity: 0.55;
+}
+
+.state-rules-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.policy-section-desc {
-  margin: -0.35rem 0 1rem;
+.state-rules-toolbar p {
+  margin: 0;
+  font-size: 0.85rem;
   color: var(--c-neutral-600);
-  font-size: 0.9rem;
+}
+
+.state-rules-toolbar modus-wc-select {
+  min-width: 220px;
+}
+
+.timing-band-inline {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  background: var(--c-neutral-50);
+  border-radius: var(--radius-md);
+}
+
+.timing-band-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+.exception-list.compact {
+  margin: 0.5rem 0 1rem;
+}
+
+.policy-grid.compact {
+  margin: 0.75rem 0;
 }
 
 .policy-grid {
@@ -775,57 +913,23 @@ body {
   align-items: end;
 }
 
-.policy-grid.nested {
-  margin: 0.5rem 0 0.75rem 1.5rem;
-}
-
-.policy-toggle-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: flex-end;
-  margin-top: 0.75rem;
-}
-
 .exception-list {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
 }
 
-.timing-band {
-  margin-bottom: 1rem;
-  background: var(--c-neutral-50);
-}
-
-.timing-band h3 {
-  margin: 0 0 0.75rem;
-  font-size: 0.95rem;
-}
-
-.timeline-preview {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  background: var(--c-neutral-50);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--c-neutral-200);
-}
-
-.timeline-preview-label {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--c-neutral-500);
-  margin-bottom: 0.5rem;
-}
-
-.policy-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--c-neutral-200);
+@media (max-width: 900px) {
+  .break-rules-row {
+    grid-template-columns: 1fr;
+  }
+  .timing-band-inline {
+    grid-template-columns: 1fr;
+  }
+  .daily-rules-header,
+  .daily-rules-row {
+    grid-template-columns: 120px repeat(5, minmax(88px, 1fr));
+  }
 }
 
 /* ---------- Responsive ---------- */

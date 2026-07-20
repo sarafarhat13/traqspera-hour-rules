@@ -19,7 +19,7 @@ const ROUTES: NavRoute[] = [
   { path: '/field', label: 'Field Employee', icon: 'person' },
   { path: '/foreman', label: 'Foreman Dashboard', icon: 'bar_graph' },
   { path: '/timesheet', label: 'Timesheet Summary', icon: 'calendar' },
-  { path: '/labor-rules', label: 'Labor Rules', icon: 'book' },
+  { path: '/labor-rules', label: 'Hour Rules', icon: 'book' },
   { path: '/admin', label: 'Admin Exceptions', icon: 'settings' },
 ];
 

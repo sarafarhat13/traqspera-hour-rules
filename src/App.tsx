@@ -4,9 +4,7 @@ import FieldEmployee from './pages/FieldEmployee';
 import ForemanDashboard from './pages/ForemanDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import TimesheetSummary from './pages/TimesheetSummary';
-import LaborRulesHub from './pages/LaborRulesHub';
-import MealPeriodRules from './pages/MealPeriodRules';
-import RestBreakRules from './pages/RestBreakRules';
+import TimesheetHourRules from './pages/TimesheetHourRules';
 
 export default function App() {
   return (
@@ -16,9 +14,8 @@ export default function App() {
         <Route path="/field" element={<FieldEmployee />} />
         <Route path="/foreman" element={<ForemanDashboard />} />
         <Route path="/timesheet" element={<TimesheetSummary />} />
-        <Route path="/labor-rules" element={<LaborRulesHub />} />
-        <Route path="/labor-rules/meals" element={<MealPeriodRules />} />
-        <Route path="/labor-rules/rest" element={<RestBreakRules />} />
+        <Route path="/labor-rules" element={<TimesheetHourRules />} />
+        <Route path="/labor-rules/*" element={<Navigate to="/labor-rules" replace />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="*" element={<Navigate to="/field" replace />} />
       </Route>
